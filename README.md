@@ -1,2 +1,2 @@
 # webapps
-webapps page for https://justhomka.github.io/
+webapps for https://justhomka.github.io/
