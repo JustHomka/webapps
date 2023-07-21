@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustHomka's website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JustHomka</h1>
+            <p>Minecraft plugin and web developer</p>
+        </header>
+        <nav>
+            <button class="nav-buttons" onclick="redirecttohome()">Home</button>
+            <button class="nav-buttons" onclick="redirecttoapps()">Web apps</button>
+        </nav>
+        <section>
+            <h2>👋Hi there</h2>
+            <p>I'm Vadim, Ukrainian Minecraft plugin and web developer. You're on my website with GitHub Repositories that I'm working on</p>
+        </section>
+        <section>
+            <h2>💻Repositories</h2>
+            <div class="tag-selector">
+                <button class="tag-button" onclick="filterByTag('all')">All</button>
+                <button class="tag-button" onclick="filterByTag('Java')">Java</button>
+                <button class="tag-button" onclick="filterByTag('Python')">Python</button>
+                <button class="tag-button" onclick="filterByTag('HTML5')">HTML5</button>
+            </div>
+            <ul class="repository-list">
+                <li data-tags="Java">
+                    <a href="https://github.com/JustHomka/FlipSide-TransportingBarrels" target="_blank">Java | FlipSide-TransportingBarrels</a>
+                    <p>FlipSide Minecraft server plugin for retaining items when you breake barrel</p>
+                </li>
+                <li data-tags="HTML5">
+                    <a href="https://github.com/JustHomka/justhomka.github.io" target="_blank">HTML5 | justhomka.github.io</a>
+                    <p>This website ; Written on HTML, CSS and JavaScript</p>
+                </li>
+                <li data-tags="HTML5">
+                    <a href="https://github.com/JustHomka/webapps" target="_blank">HTML5 | webapps</a>
+                    <p>Webapps and webapps page for this website</p>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <p>My GitHub: @JustHomka</p>
+        </footer>
+    </div>
+
+    <script>
+        function filterByTag(tag) {
+            const repositoryItems = document.querySelectorAll('.repository-list li');
+            repositoryItems.forEach(item => {
+                if (tag === 'all' || item.dataset.tags.includes(tag)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        function redirecttohome() {
+            window.location.href = "https://justhomka.github.io/"
+        }
+        function redirecttoapps() {
+            window.location.href = "https://justhomka.github.io/webapps"
+        }
+    </script>
+</body>
+</html>
